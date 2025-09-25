@@ -1,9 +1,8 @@
-import React from 'react';
-import { Votes } from "../../types/votes";
+import { VoteType } from "../../types/votes";
 import css from './VoteOptions.module.css';
 
 interface VoteOptionsProps {
-    onVote: (vote:Votes) => void,
+    onVote: (vote: VoteType) => void,
     onReset: () => void,
     canReset?: boolean
 };
@@ -11,9 +10,9 @@ interface VoteOptionsProps {
 const VoteOptions = ({onVote, onReset, canReset= true}: VoteOptionsProps) => {
   return (
     <div className={css.container}>
-        <button className={css.button} onClick={()=> onVote(Votes.good)}>Good</button>
-        <button className={css.button} onClick={()=> onVote(Votes.neutral)}>Neutral</button>
-        <button className={css.button} onClick={()=> onVote(Votes.bad)}>Bad</button>
+        <button className={css.button} onClick={()=> onVote('good')}>Good</button>
+        <button className={css.button} onClick={()=> onVote('neutral')}>Neutral</button>
+        <button className={css.button} onClick={()=> onVote('bad')}>Bad</button>
         {canReset && <button className={`${css.button} ${css.reset}`} onClick={onReset}>Reset</button>}
     </div>
 

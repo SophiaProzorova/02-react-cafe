@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import type { VoteType } from './types/votes';
 import CafeInfo from './components/CafeInfo/CafeInfo'
 import VoteOptions from './components/VoteOptions/VoteOptions';
